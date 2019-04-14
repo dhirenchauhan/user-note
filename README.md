@@ -1,6 +1,16 @@
 # user-note
 User Note Spring Boot Project with MySql and Basic Authentication
 
+# HowTos
+- Download or Clone project in any director of your choice
+- do mvn clean install inside cloned/downloadded "user-note" projecct
+- Open in any editor of your choice
+- To update MySql project - Go to src/main/resource/application.properties file
+	and update URL, Schema , UserName and Password
+- Run DML and DDL in Database given under "Required DML DDL" section
+- Spring Basic Authentication is used. Email as Username and password for Basic Authentication
+- User Postman or cUrl provided to run the project.
+
 # Exposed URL : 
 URL - http://<HOSTNAME>>/notes
 e.g. http://localhost:8182/notes
