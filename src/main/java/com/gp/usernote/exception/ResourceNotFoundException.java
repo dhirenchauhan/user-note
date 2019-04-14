@@ -1,5 +1,12 @@
 package com.gp.usernote.exception;
 
+/**
+ * Class Name : ResourceNotFoundException
+ * Purpose : This class is for handling Resource Exception
+ * @author dhiren
+ *
+ */
+
 public class ResourceNotFoundException extends RuntimeException {
 	public ResourceNotFoundException() {
 		super();

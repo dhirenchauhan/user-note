@@ -5,6 +5,13 @@ import com.gp.usernote.exception.ResourceNotFoundException;
 
 import static java.util.Objects.isNull;
 
+/**
+ * Class : RestConditionCheck
+ * Purpose : This is a utility class to support Rest Pre condition check
+ * @author dhiren
+ *
+ */
+
 public final class RestConditionCheck {
 	private RestConditionCheck() {
 	}

@@ -17,6 +17,14 @@ import org.springframework.security.crypto.scrypt.SCryptPasswordEncoder;
 
 import com.gp.usernote.service.UserDetailsServiceImpl;
 
+/**
+ * Class : BasicAuthSecurityConfiguration
+ * Purpose : This class provide Basic Authentication for User
+ * Before serving request, User is authentication with Username and Password
+ * stored in DB. This class also support BCrypt password encription
+ * @author dhiren
+ *
+ */
 
 @Configuration
 @EnableWebSecurity

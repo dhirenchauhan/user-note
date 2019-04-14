@@ -18,6 +18,13 @@ import javax.persistence.TemporalType;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 
+/**
+ * Class Name : Note
+ * Purpose : This is Entity Class Note
+ * @author dhiren
+ *
+ */
+
 @Entity
 @Table(name = "NOTE")
 public class Note implements Serializable {

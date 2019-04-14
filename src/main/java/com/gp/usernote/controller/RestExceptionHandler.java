@@ -13,6 +13,14 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 
 import com.gp.usernote.model.ErrorDetail;
 
+/**
+ * Class Name : RestExceptionHandler
+ * Purpose : This is for handling Rest and User defined Exception
+ * ControllerAdvice Annotation over on class will make sure that 
+ * all exception are handled at central place
+ * @author dhiren
+ */
+
 @ControllerAdvice
 public class RestExceptionHandler extends ResponseEntityExceptionHandler {
 

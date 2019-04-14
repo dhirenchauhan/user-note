@@ -5,6 +5,14 @@ import org.springframework.security.core.context.SecurityContextHolder;
 
 import com.gp.usernote.util.RestConditionCheck;
 
+/**
+ * Class Name : BaseController
+ * Purpose : All Controller class will extend base class.
+ * This class PreCondition Rest on input before resource can server user
+ * @author dhiren
+ *
+ */
+
 public class BaseController {
 
 	protected <T> void entityCheck(T resource) {

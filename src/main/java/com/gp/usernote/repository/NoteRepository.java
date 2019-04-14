@@ -9,6 +9,14 @@ import org.springframework.stereotype.Repository;
 
 import com.gp.usernote.model.Note;
 
+/**
+ * Interface : NoteRepository
+ * Purpose : This interface will serve all DB request related to Note Entity
+ * It extends JpaRepository to support crud operations
+ * @author dhiren
+ *
+ */
+
 @Repository
 public interface NoteRepository extends JpaRepository<Note, Integer> {
 

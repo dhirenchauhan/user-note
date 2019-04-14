@@ -9,6 +9,13 @@ import com.gp.usernote.model.User;
 import com.gp.usernote.repository.UserRepository;
 import com.gp.usernote.util.ServiceConditionCheck;
 
+/**
+ * Class : UserService
+ * Purpose : This is service class to Support User Service Operation
+ * @author dhiren
+ *
+ */
+
 @Service
 public class UserService {
 

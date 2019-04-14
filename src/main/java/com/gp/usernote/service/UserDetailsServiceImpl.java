@@ -9,6 +9,15 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+/**
+ * Class : UserDetailsServiceImpl
+ * Purpose : This class is for supporting User Authentication
+ * User details fetched from DB pass it on too UseerDetails Object
+ * That will allow it to serve Authentication through WebSecurityConfigurer
+ * @author dhiren
+ *
+ */
+
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
 

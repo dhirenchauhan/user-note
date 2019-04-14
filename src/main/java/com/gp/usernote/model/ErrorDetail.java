@@ -1,5 +1,12 @@
 package com.gp.usernote.model;
 
+/**
+ * Class : ErrorDetail
+ * Purpose : In case of exception user will get error details in status, message, detailsMessage
+ * @author dhiren
+ *
+ */
+
 public class ErrorDetail {
 
 	private int status;

@@ -2,6 +2,13 @@ package com.gp.usernote.util;
 
 import javax.persistence.EntityNotFoundException;
 
+/**
+ * Class : ServiceConditionCheck
+ * Purpose : This is a utility class to Provide Entity Check
+ * @author dhiren
+ *
+ */
+
 public class ServiceConditionCheck {
 	private ServiceConditionCheck() {
 	}

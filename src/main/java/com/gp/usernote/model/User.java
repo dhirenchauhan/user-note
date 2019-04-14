@@ -19,6 +19,13 @@ import javax.validation.constraints.NotNull;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 
+/**
+ * Class : User
+ * Purpose : This is Entity Class User
+ * @author dhiren
+ *
+ */
+
 @Entity
 @Table(name = "USER")
 public class User implements Serializable {

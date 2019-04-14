@@ -40,6 +40,15 @@ public class NoteServiceTest {
 	}
 	
 	@Test
+	public void getUserNotesTest(){
+		when(noteRepository.getUserNotes(TEST_EMAIL)).thenReturn(Arrays.asList(note));
+		List<Note> listNode = noteService.getUserNotes(TEST_EMAIL);
+		assertEquals(1, listNode.size());
+		assertEquals(note.getTitle(), listNode.get(0).getTitle());
+		assertEquals(note.getNote(), listNode.get(0).getNote());
+	}
+	
+	@Test
 	public void createNoteTest() {
 		when(userService.findUserByEmail(TEST_EMAIL)).thenReturn(mock(User.class));
 		when(noteRepository.save(note)).thenReturn(note);

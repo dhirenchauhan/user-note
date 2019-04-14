@@ -1,5 +1,12 @@
 package com.gp.usernote.exception;
 
+/**
+ * Class : BadRequestException
+ * Purpose : This class is for handling Bad Request Exception
+ * @author dhiren
+ *
+ */
+
 public class BadRequestException extends RuntimeException {
 	public BadRequestException() {
 		super();

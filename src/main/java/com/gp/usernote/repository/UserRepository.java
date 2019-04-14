@@ -9,6 +9,14 @@ import org.springframework.stereotype.Repository;
 
 import com.gp.usernote.model.User;
 
+/**
+ * Interface : UserRepository
+ * Purpose : This interface will serve all DB request related to User Entity
+ * It extends JpaRepository to support crud operations
+ * @author dhiren
+ *
+ */
+
 @Repository
 public interface UserRepository extends JpaRepository<User, Integer> {
 
