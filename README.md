@@ -1,5 +1,5 @@
 # user-note
-User Note Spring Boot Project
+User Note Spring Boot Project with MySql and Basic Authentication
 
 # Exposed URL : 
 URL - http://<HOSTNAME>>/notes
@@ -13,11 +13,18 @@ GET, POST, PUT, DELETE
 URL : http://localhost:8182/notes
 This will get All element for Authenticated User
 
+Using cUrl
+-----------
+curl -u user02@gp.com:testpassword http://localhost:8182/notes
 
 # POST Operation 
 URL : http://localhost:8182/notes
 
-Json Body
+Using cUrl  
+---------------
+curl -u user02@gp.com:testpassword -d "@C:\temp\post-json.json" -H "Content-Type: application/json" -X POST http://localhost:8182/notes
+
+Json Body - post-json.json
 {
 	"title" : "note-title"
 	"note" : "note description"
@@ -27,7 +34,11 @@ Json Body
 
 URL : http://localhost:8182/notes
 
-Json Body
+cUrl
+-----------------
+curl -u user02@gp.com:testpassword -d "@C:\temp\put-json.json" -H "Content-Type: application/json" -X PUT http://localhost:8182/notes
+
+Json Body - put-json.json
 {
 	"title" : "note-title"
 	"note" : "note description"
@@ -39,7 +50,11 @@ Json Body
 # DELETE Operation 
 URL : http://localhost:8182/notes
 
-Json Body
+cUrl
+--------------
+curl -u user02@gp.com:testpassword -d "@C:\temp\delete-json.json" -H "Content-Type: application/json" -X DELETE http://localhost:8182/notes
+
+Json Body - delete-json.json
 {
 	"title" : "note-title"
 }
@@ -62,6 +77,8 @@ CREATE TABLE USER (
 INSERT INTO USER (EMAIL, PASSWORD) VALUES ('user01@gp.com', '{noop}testpassword');
 INSERT INTO USER (EMAIL, PASSWORD) VALUES ('user02@gp.com', '{noop}testpassword');
 
+NOTE : Using BCrypt Utility (BCryptPasswordEncoderTest.java) encrypted password can be generated and inserted instead
+
 Note Table
 -----------------
 CREATE TABLE NOTE (
@@ -82,4 +99,3 @@ User name and password to be used as inserted in User table
 
 # BCrypt Utility - BCryptPasswordEncoderTest
 BCyrpt Utility is provided to generate BCrypt Password
-
