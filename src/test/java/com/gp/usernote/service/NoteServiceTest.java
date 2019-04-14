@@ -6,6 +6,8 @@ import static org.mockito.Mockito.*;
 import java.util.Arrays;
 import java.util.List;
 
+import javax.persistence.EntityNotFoundException;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -59,4 +61,31 @@ public class NoteServiceTest {
 		assertEquals("detail note", persistedNote.getNote());
 	}
 	
+	@Test(expected=EntityNotFoundException.class)
+	public void updateNoteEntityNotFoundTest(){
+		when(noteRepository.getUserNote(note.getTitle(), TEST_EMAIL)).thenReturn(null);
+		noteService.updateNote(note, TEST_EMAIL);
+	}
+	
+	@Test
+	public void updateNoteTest() {
+		when(noteRepository.getUserNote(note.getTitle(), TEST_EMAIL)).thenReturn(note);
+		when(noteRepository.save(note)).thenReturn(note);
+		Note persistedNode = noteService.updateNote(note, TEST_EMAIL);
+		assertNotNull(persistedNode);
+		assertNotNull(persistedNode.getUpdateTime());
+	}
+	
+	@Test(expected=EntityNotFoundException.class)
+	public void deleteNoteEntityNotFoundTest(){
+		when(noteRepository.getUserNote(note.getTitle(), TEST_EMAIL)).thenReturn(null);
+		noteService.deleteNote(note, TEST_EMAIL);
+	}
+	
+	@Test
+	public void deleteNoteTest(){
+		when(noteRepository.getUserNote(note.getTitle(), TEST_EMAIL)).thenReturn(note);
+		noteService.deleteNote(note, TEST_EMAIL);
+		verify(noteRepository, times(1)).delete(note);
+	}
 }
