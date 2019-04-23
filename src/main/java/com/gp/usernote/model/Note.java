@@ -27,12 +27,14 @@ import org.springframework.data.annotation.LastModifiedDate;
 
 @Entity
 @Table(name = "NOTE")
-public class Note implements Serializable {
+public class Note implements Serializable, IBaseModel {
+
+	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "NOTE_ID")
-	private Integer noteId;
+	@Column(name = "ID")
+	private Integer id;
 
 	@Column(name = "TITLE", nullable = false, length = 50, unique = true)
 	private String title;
@@ -54,12 +56,12 @@ public class Note implements Serializable {
 	@JoinColumn(name = "user_id")
 	private User user;
 
-	public Integer getNoteId() {
-		return noteId;
+	public Integer getId() {
+		return id;
 	}
 
-	public void setNoteId(Integer noteId) {
-		this.noteId = noteId;
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 	public String getTitle() {

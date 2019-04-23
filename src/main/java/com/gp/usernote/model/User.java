@@ -28,18 +28,21 @@ import org.springframework.data.annotation.LastModifiedDate;
 
 @Entity
 @Table(name = "USER")
-public class User implements Serializable {
+public class User implements Serializable, IBaseModel {
+
+	private static final long serialVersionUID = 1L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "user_id")
-	private Integer userId;
+	@Column(name = "ID")
+	private Integer id;
 
 	@NotNull
-	@Column(name = "email", nullable = false, unique = true)
+	@Column(name = "EMAIL", nullable = false, unique = true)
 	private String email;
 
 	@NotNull
-	@Column(name = "password", nullable = false)
+	@Column(name = "PASSWORD", nullable = false)
 	@Min(8)
 	private String password;
 
@@ -56,12 +59,12 @@ public class User implements Serializable {
 	@OneToMany(mappedBy = "note")
 	private List<Note> notes;
 
-	public Integer getUserId() {
-		return userId;
+	public Integer getId() {
+		return id;
 	}
 
-	public void setUserId(Integer userId) {
-		this.userId = userId;
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 	public String getEmail() {
